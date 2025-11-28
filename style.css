@@ -1,31 +1,138 @@
-body {
-    font-family: Arial;
-    background: #0088cc;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
+* {
     margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
-.container {
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    background: linear-gradient(135deg, #37AEE2 0%, #1E96C8 100%);
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.tg_page {
+    width: 100%;
+    max-width: 360px;
+    padding: 20px;
+}
+
+.tg_login_container {
     background: white;
-    padding: 40px;
-    border-radius: 10px;
+    border-radius: 12px;
+    padding: 40px 30px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+}
+
+.tg_header {
     text-align: center;
+    margin-bottom: 30px;
 }
-input {
-    width: 100%;
-    padding: 10px;
-    margin: 10px 0;
+
+.tg_logo {
+    font-size: 28px;
+    font-weight: 300;
+    color: #37AEE2;
+    margin-bottom: 10px;
+}
+
+.tg_subtitle {
+    color: #666;
+    font-size: 14px;
+    line-height: 1.4;
+}
+
+.tg_input_group {
+    margin-bottom: 20px;
+}
+
+.tg_input_group label {
+    display: block;
+    margin-bottom: 8px;
+    color: #333;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.tg_phone_input {
+    display: flex;
+    gap: 10px;
+}
+
+.tg_country_code {
+    width: 80px;
+    padding: 12px;
     border: 1px solid #ddd;
-    border-radius: 5px;
+    border-radius: 8px;
+    font-size: 14px;
 }
-button {
+
+.tg_phone, .tg_code {
     width: 100%;
-    padding: 10px;
-    background: #0088cc;
+    padding: 12px 15px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 16px;
+}
+
+.tg_phone:focus, .tg_code:focus {
+    outline: none;
+    border-color: #37AEE2;
+}
+
+.tg_btn_primary {
+    width: 100%;
+    background: #37AEE2;
     color: white;
     border: none;
-    border-radius: 5px;
+    padding: 14px;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 500;
     cursor: pointer;
+    transition: background 0.3s;
+}
+
+.tg_btn_primary:hover {
+    background: #1E96C8;
+}
+
+.tg_code_info {
+    background: #f8f9fa;
+    padding: 15px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.tg_info_text {
+    color: #666;
+    font-size: 14px;
+    margin-bottom: 8px;
+}
+
+.tg_phone_display {
+    color: #333;
+    font-weight: 500;
+    font-size: 15px;
+}
+
+.tg_footer {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+    padding-top: 20px;
+    border-top: 1px solid #eee;
+}
+
+.tg_footer a {
+    color: #37AEE2;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.tg_footer a:hover {
+    text-decoration: underline;
 }
